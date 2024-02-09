@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 16,
     borderRadius: 8,
-    elevation: 4,
+    elevation: 2,
     height: 150,
   },
   button: { flex: 1 },
