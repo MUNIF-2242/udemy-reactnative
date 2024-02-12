@@ -1,0 +1,27 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+
+const MealDetails = ({ duration, complexity, affordability, textStyle }) => {
+  return (
+    <View style={styles.details}>
+      <Text style={[styles.detailsItem, textStyle]}>{duration} m</Text>
+      <Text style={[styles.detailsItem, textStyle]}>
+        {complexity.toUpperCase()}
+      </Text>
+      <Text style={[styles.detailsItem, textStyle]}>
+        {affordability.toUpperCase()}
+      </Text>
+    </View>
+  );
+};
+
+export default MealDetails;
+
+const styles = StyleSheet.create({
+  details: {
+    flexDirection: "row",
+    justifyContent: "center",
+    padding: 8,
+  },
+  detailsItem: { marginHorizontal: 8, fontSize: 12 },
+});
