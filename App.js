@@ -7,6 +7,7 @@ import MealDetailScreen from "./screens/MealDetailScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import FavouritesScreen from "./screens/FavouritesScreen";
 import { Ionicons } from "@expo/vector-icons";
+import FavouritesContextProvider from "./store/context/favorites-context";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -50,29 +51,31 @@ export default function App() {
     );
   };
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          contentStyle: { backgroundColor: "#000" },
-          headerTitleAlign: "center",
-          headerStyle: { backgroundColor: "tomato" },
-          headerTintColor: "#fff",
-        }}
-      >
-        <Stack.Screen
-          name="MealsCategoryScreen"
-          component={DrawerNavigator}
-          options={{
-            headerShown: false,
+    <FavouritesContextProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            contentStyle: { backgroundColor: "#000" },
+            headerTitleAlign: "center",
+            headerStyle: { backgroundColor: "tomato" },
+            headerTintColor: "#fff",
           }}
-        />
-        <Stack.Screen
-          name="MealsOverviewScreen"
-          component={MealsOverviewScreen}
-        />
-        <Stack.Screen name="MealDetailScreen" component={MealDetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        >
+          <Stack.Screen
+            name="MealsCategoryScreen"
+            component={DrawerNavigator}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="MealsOverviewScreen"
+            component={MealsOverviewScreen}
+          />
+          <Stack.Screen name="MealDetailScreen" component={MealDetailScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </FavouritesContextProvider>
   );
 }
 
