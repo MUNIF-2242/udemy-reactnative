@@ -36,6 +36,36 @@ const ExpensesOutput = ({ expenses, expensesPeriod }) => {
       amount: 10.0,
       date: new Date("2022-12-19"),
     },
+    {
+      id: "e6",
+      description: "A pair of shoes",
+      amount: 10.0,
+      date: new Date("2024-12-19"),
+    },
+    {
+      id: "e7",
+      description: "A pair of ball",
+      amount: 10.0,
+      date: new Date("2024-12-19"),
+    },
+    {
+      id: "e8",
+      description: "A pair of shirts",
+      amount: 10.0,
+      date: new Date("2024-12-19"),
+    },
+    {
+      id: "e9",
+      description: "A pair of Banana",
+      amount: 10.0,
+      date: new Date("2022-12-19"),
+    },
+    {
+      id: "e10",
+      description: "A pair of shirts",
+      amount: 10.0,
+      date: new Date("2022-12-19"),
+    },
   ];
   return (
     <View style={styles.container}>
@@ -49,7 +79,7 @@ export default ExpensesOutput;
 
 const styles = StyleSheet.create({
   container: {
-    //height: "100%",
+    height: "100%",
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary700,
   },
