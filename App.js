@@ -18,7 +18,7 @@ export default function App() {
   function ExpensesOverview() {
     return (
       <Tab.Navigator
-        screenOptions={{
+        screenOptions={({ navigation }) => ({
           headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
           headerTintColor: GlobalStyles.colors.primary50,
           tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
@@ -28,10 +28,12 @@ export default function App() {
               icon="add"
               size={24}
               color={tintColor}
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate("ManageExpense");
+              }}
             />
           ),
-        }}
+        })}
       >
         <Tab.Screen
           name="RecentExpenses"
