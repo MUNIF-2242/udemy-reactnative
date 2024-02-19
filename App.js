@@ -8,6 +8,7 @@ import AllExpenses from "./screens/AllExpenses";
 import ManageExpense from "./screens/ManageExpense";
 import { Ionicons } from "@expo/vector-icons";
 import { GlobalStyles } from "./constants/styles";
+import IconButton from "./components/UI/IconButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +23,14 @@ export default function App() {
           headerTintColor: GlobalStyles.colors.primary50,
           tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
           tabBarActiveTintColor: GlobalStyles.colors.accent500,
+          headerRight: ({ tintColor }) => (
+            <IconButton
+              icon="add"
+              size={24}
+              color={tintColor}
+              onPress={() => {}}
+            />
+          ),
         }}
       >
         <Tab.Screen
