@@ -16,13 +16,13 @@ const ManageExpense = ({ route, navigation }) => {
   }, [navigation, isEditing]);
 
   const deleteExpenseHandler = () => {
-    console.log("delete icon");
+    navigation.goBack();
   };
   const cancelPressHandler = () => {
-    console.log("cancel icon");
+    navigation.goBack();
   };
   const confirmPressHandler = () => {
-    console.log("confirm icon");
+    navigation.goBack();
   };
 
   return (
@@ -36,7 +36,7 @@ const ManageExpense = ({ route, navigation }) => {
           Cancel
         </Button>
         <Button style={styles.btnExtraStyle} onPress={confirmPressHandler}>
-          {isEditing ? "Edit" : "Add"}
+          {isEditing ? "Edit" : "Update"}
         </Button>
       </View>
       {isEditing && (
